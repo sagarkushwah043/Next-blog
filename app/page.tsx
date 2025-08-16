@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Header from "@/components/Hearder"; // ✅ Fixed typo in import
-import BlogCard from "@/components/BlogCard";
+import Header from "../lib/components/Hearder"; // ✅ Fixed typo in import
+import BlogCard from "../lib/components/BlogCard";
 
 const blogs = [
   { id: "1", title: "My First Blog", content: "This is the first blog post..." },
