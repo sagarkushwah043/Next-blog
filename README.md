@@ -3,7 +3,7 @@ NextBlog is a modern platform built with Next.js where users can write, share, a
 
 ## Live Demo
 
-Check out the live demo here: [NextBlog Live Demo](https://your-demo-link.com)
+Check out the live demo here: [NextBlog Live Demo]((https://next-blog-three-indol.vercel.app/))
 
 ## Features
 
