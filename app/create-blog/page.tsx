@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 
 export default function CreateBlogPage() {
@@ -16,7 +17,6 @@ export default function CreateBlogPage() {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setImageFile(file);
-
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreview(reader.result as string);
@@ -27,7 +27,6 @@ export default function CreateBlogPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     console.log({ title, content, imageFile });
     router.push("/blogs");
   };
@@ -87,11 +86,16 @@ export default function CreateBlogPage() {
                 </div>
               )}
               {preview && (
-                <img
-                  src={preview}
-                  alt="Preview"
-                  className="w-full h-full object-cover rounded-2xl"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={preview}
+                    alt="Preview"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="rounded-2xl"
+                    priority
+                  />
+                </div>
               )}
               <input
                 id="image-upload"

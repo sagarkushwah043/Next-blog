@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function RegisterPage() {
@@ -8,9 +7,8 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -19,8 +17,11 @@ export default function RegisterPage() {
       return;
     }
 
-    // Simulate register logic
-    router.push("/login");
+    // No API call, just show success (or reset fields)
+    alert("Registered successfully (UI only, no backend)");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (

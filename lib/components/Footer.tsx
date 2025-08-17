@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -20,9 +21,15 @@ export default function Footer() {
         <div>
           <h3 className="text-base font-semibold text-white mb-1">Quick Links</h3>
           <ul className="space-y-0.5 text-sm">
-            <li><a href="/" className="hover:text-indigo-400 transition">Home</a></li>
-            <li><a href="/blog" className="hover:text-indigo-400 transition">Blogs</a></li>
-            <li><a href="/about" className="hover:text-indigo-400 transition">About</a></li>
+            <li>
+              <Link href="/" className="hover:text-indigo-400 transition">Home</Link>
+            </li>
+            <li>
+              <Link href="/blog" className="hover:text-indigo-400 transition">Blogs</Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-indigo-400 transition">About</Link>
+            </li>
           </ul>
         </div>
 
@@ -31,13 +38,28 @@ export default function Footer() {
           <h3 className="text-base font-semibold text-white mb-1">Contact</h3>
           <p className="text-xs">sagarkushwah043@gmail.com</p>
           <div className="flex justify-center md:justify-start space-x-2 mt-1">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
               <Github size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/sagar-kushwah-0a716624b/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+            <a
+              href="https://www.linkedin.com/in/sagar-kushwah-0a716624b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
               <Linkedin size={16} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
               <Twitter size={16} />
             </a>
           </div>

@@ -5,9 +5,24 @@ import Header from "../lib/components/Hearder"; // ✅ Fixed typo in import
 import BlogCard from "../lib/components/BlogCard";
 
 const blogs = [
-  { id: "1", title: "My First Blog", content: "This is the first blog post..." },
-  { id: "2", title: "Next.js Guide", content: "Learn how to use Next.js..." },
-  { id: "3", title: "React Tips", content: "Some useful tips for React..." },
+  { 
+    id: "1", 
+    title: "My First Blog", 
+    content: "Learn how to use Next.js for Building...", 
+    image: "/images/blog1.avif" 
+  },
+  { 
+    id: "2", 
+    title: "TailwindCSS Tips", 
+    content: " Learn How to use Tailwind CSS.....", 
+    image: "/images/blog2.jpg" 
+  },
+  { 
+    id: "3", 
+    title: "React Tips", 
+    content: "Some useful tips for React developers...", 
+    image: "/images/blog3.svg" 
+  },
 ];
 
 export default function HomePage() {
@@ -56,9 +71,8 @@ export default function HomePage() {
               whileHover={{ scale: 1.03 }}
               className="transform transition duration-300"
             >
-              {/* 🔥 Match colors with other components */}
               <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition p-6 border border-gray-700">
-                <BlogCard id={blog.id} title={blog.title} content={blog.content} />
+                <BlogCard id={blog.id} title={blog.title} content={blog.content} image={blog.image} />
               </div>
             </motion.div>
           ))}

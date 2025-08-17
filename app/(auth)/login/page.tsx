@@ -1,5 +1,4 @@
 "use client";
-import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -10,21 +9,18 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-
-    if (res?.error) {
-      setError(res.error);
-    } else {
-      router.push("/");
+    // ✅ No API call, just dummy check (optional)
+    if (!email || !password) {
+      setError("Email and Password are required");
+      return;
     }
+
+    // Example: Redirect to homepage after "login"
+    router.push("/");
   };
 
   return (
